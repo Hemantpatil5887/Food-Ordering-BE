@@ -48,7 +48,6 @@ process
         app.stop();
     })
     .on('uncaughtException', (err) => {
-        console.log(err)
         log.error('uncaughtException', 'uncaught exception', new Error(`Uncaught Exception: ${err.message}`));
     });
 

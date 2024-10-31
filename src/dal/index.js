@@ -1,5 +1,12 @@
-const { getUser } = require('./user');
+const { getUser, addUser } = require('./user');
+const { allMenus, getMenuByCategoriesList } = require('./menu');
+const { addOrders, addOrderItem } = require('./order');
 
 module.exports = {
-    getUser
+    getUser,
+    addUser,
+    allMenus,
+    getMenuByCategoriesList,
+    addOrders,
+    addOrderItem
 };

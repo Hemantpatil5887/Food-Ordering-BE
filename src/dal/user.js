@@ -1,4 +1,4 @@
-const { read } = require('./dbHelpers');
+const { read, create } = require('./dbHelpers');
 const tableName = 'users';
 
 const getUser = async (whereCondition = {}, columns = "*") => {
@@ -6,6 +6,15 @@ const getUser = async (whereCondition = {}, columns = "*") => {
     return result;
 };
 
+const addUser = async (data) => {
+    try {
+        return await create(tableName, data);
+    } catch (error) {
+        throw new databaseError(error);
+    }
+};
+
 module.exports = {
-    getUser
+    getUser,
+    addUser
 };

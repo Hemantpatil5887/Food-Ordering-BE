@@ -1,7 +1,6 @@
 const { dataSource } = require('../../utils/helperFunctions/environmentFiles');
 
 const mysqlConfig = dataSource.mysql;
-console.log({mysqlConfig})
 const {
     read,
     update,

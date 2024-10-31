@@ -1,12 +1,13 @@
-const { user } = require('../../services');
+const { menu } = require('../../services');
 const { express, createBunyanLogger, customCatchError, sendFormattedResponse } = require('../../utils');
-const log = createBunyanLogger('user-routes');
+const log = createBunyanLogger('menu-routes');
 const router = express.Router();
 
-router.route('/details').post(async (request, response) => {
-    const functionName = 'details';
+router.route('/all').get(async (request, response) => {
+    const functionName = 'allMenu';
     try {
-        const details = await user.details(request.body);
+        const queryParams = request.query;
+        const details = await menu.allMenu(queryParams);
         const formattedResponse = await sendFormattedResponse(details);
         response.status(formattedResponse.httpStatus).send(formattedResponse.sendResponse);
     } catch (error) {
@@ -16,10 +17,10 @@ router.route('/details').post(async (request, response) => {
     }
 });
 
-router.route('/register').post(async (request, response) => {
-    const functionName = 'register';
+router.route('/getMenuByCategories').post(async (request, response) => {
+    const functionName = 'getMenuByCategories';
     try {
-        const details = await user.register(request.body);
+        const details = await menu.getMenuByCategories(request.body);
         const formattedResponse = await sendFormattedResponse(details);
         response.status(formattedResponse.httpStatus).send(formattedResponse.sendResponse);
     } catch (error) {

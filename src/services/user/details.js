@@ -1,6 +1,6 @@
 const { createBunyanLogger, _ } = require('./../../utils');
 const { getUser } = require('./../../dal')
-const log = createBunyanLogger('apple.querySale');
+const log = createBunyanLogger('user details');
 
 const details = async (data) => {
     const functionName = 'details';

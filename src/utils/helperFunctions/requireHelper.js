@@ -23,6 +23,8 @@ const os = require('os');
 const mimeTypes = require('mime-types');
 const crypto = require('crypto');
 const uuid = require('uuid');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 // express
 const app = express();
@@ -52,4 +54,6 @@ exports.os = os;
 exports.mimeTypes = mimeTypes;
 exports.crypto = crypto;
 exports.uuid = uuid;
+exports.cors = cors;
+exports.cookieParser = cookieParser;
 
